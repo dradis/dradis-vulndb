@@ -7,7 +7,7 @@ class DradisTasks < Thor
       def private(query)
         require 'config/environment'
 
-        results = VulndbImport::Filters::VulnDB.run(:query => query)
+        results = Dradis::VulndbImport::Filters::VulnDB.run(:query => query)
 
         puts "VulnDB Search\n==============="
         puts "#{results.size} results\n"
@@ -22,7 +22,7 @@ class DradisTasks < Thor
       def hq(query)
         require 'config/environment'
 
-        results = VulndbImport::Filters::VulnDB_HQ.run(:query => query)
+        results = Dradis::VulndbImport::Filters::VulnDB_HQ.run(:query => query)
 
         puts "VulnDB HQ Search\n==============="
         puts "#{results.size} results\n"
