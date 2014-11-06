@@ -1,1 +1,1 @@
-require "dradis/vulndb_import"
+require "dradis/plugins/vulndb"
