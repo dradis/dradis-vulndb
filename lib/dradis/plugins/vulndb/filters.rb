@@ -16,21 +16,21 @@ module Dradis::Plugins::Vulndb::Filters
 
       begin
         results += client.private_pages(q: params[:query]).collect do |page|
-          Dradis::Plugins::Result.new(
+          Dradis::Plugins::Import::Result.new(
             description: page.content,
                   title: "[pri] #{page.name}",
                    tags: [:private]
           )
         end
         results += client.public_pages(:q => params[:query]).collect do |page|
-          Dradis::Plugins::Result.new(
+          Dradis::Plugins::Import::Result.new(
             description: page.content,
                   title: "[pub] #{page.name}",
                    tags: [:public]
           )
         end
       rescue Exception => e
-        results << Dradis::Plugins::Result.new(
+        results << Dradis::Plugins::Import::Result.new(
                     title: 'Error fetching records',
                     description: e.message
                     )
@@ -40,4 +40,4 @@ module Dradis::Plugins::Vulndb::Filters
   end
 end
 
-Dradis::Plugins::Import::Filters.add :vulndb, :full_text_search, Dradis::Pro::Vulndb::Filters::FullTextSearch
+Dradis::Plugins::Import::Filters.add :vulndb, :full_text_search, Dradis::Plugins::Vulndb::Filters::FullTextSearch
