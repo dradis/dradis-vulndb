@@ -5,7 +5,9 @@ module Dradis::Plugins::Vulndb::Filters
 
       # In case the user has changed the vulndb:rest_url setting we re-read
       # it every time
-      rest_url = URI.parse(Configuration.hq_rest_url)
+      # FIXME
+      # rest_url = URI.parse(Configuration.hq_rest_url)
+      rest_url = URI::parse(::Configuration.find_by_name('vulndb:hq_rest_url').value)
 
       client = VulnDBHQ::client
       client.host = "https://#{rest_url.host}"
