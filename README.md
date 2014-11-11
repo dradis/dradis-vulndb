@@ -1,6 +1,6 @@
 # VulnDB HQ plugin for Dradis
 
-[![Build Status](https://secure.travis-ci.org/dradis/dradis-vulndb.png?branch=master)](http://travis-ci.org/dradis/dradis-vulndb)
+[![Build Status](https://secure.travis-ci.org/dradis/dradis-vulndb.png?branch=master)](http://travis-ci.org/dradis/dradis-vulndb) [![Code Climate](https://codeclimate.com/github/dradis/dradis-vulndb.png)](https://codeclimate.com/github/dradis/dradis-vulndb.png)
 
 
 This plugin can be used to connect the Dradis Framework to a remote vulnerability database such as VulnDB HQ (http://vulndbhq.com/). The idea is to have a database with commonly used notes that you can import to your current project. 
