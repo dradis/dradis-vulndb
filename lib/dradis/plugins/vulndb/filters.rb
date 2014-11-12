@@ -7,7 +7,7 @@ module Dradis::Plugins::Vulndb::Filters
       # it every time
       rest_url = URI::parse(Dradis::Plugins::Vulndb::Engine::settings.hq_rest_url)
 
-      client = VulnDBHQ::client
+      client = ::VulnDBHQ::client
       client.host = "https://#{rest_url.host}"
       client.user = CGI::unescape(rest_url.user)
       client.password = CGI::unescape(rest_url.password)
