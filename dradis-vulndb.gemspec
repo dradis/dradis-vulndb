@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.platform      = Gem::Platform::RUBY
   spec.name          = 'dradis-vulndb'
   spec.version       = version
-  spec.summary       = %q{VulnDB HQ plugin for Dradis}
+  spec.summary       = %q{VulnDB HQ add-on for Dradis}
   spec.description   = %q{Import entries from you VulnDB HQ library into the Dradis Framework}
 
   spec.required_ruby_version = '>= 1.9.3'
