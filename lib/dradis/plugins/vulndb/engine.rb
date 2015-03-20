@@ -7,7 +7,7 @@ module Dradis::Plugins::Vulndb
     provides :import
 
     addon_settings do
-      settings.hq_rest_url = 'https://email%40domain.com:Password%21%21@your.vulndbhq.com'
+      settings.default_hq_rest_url = 'https://email%40domain.com:Password%21%21@your.vulndbhq.com'
     end
   end
 end
