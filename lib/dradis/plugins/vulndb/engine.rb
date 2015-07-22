@@ -3,7 +3,7 @@ module Dradis::Plugins::Vulndb
     isolate_namespace Dradis::Plugins::Vulndb
 
     include ::Dradis::Plugins::Base
-    description 'Import entries from you VulnDB HQ repository'
+    description 'Import entries from your VulnDB HQ repository'
     provides :import
 
     addon_settings do
