@@ -15,16 +15,16 @@ module Dradis::Plugins::Vulndb::Filters
       begin
         results += client.private_pages(q: params[:query]).collect do |page|
           Dradis::Plugins::Import::Result.new(
-            description: page.content,
+            description: page.content.dup,
                   title: "[pri] #{page.name}",
-                   tags: [:private]
+                   tags: ["!f89406_private"]
           )
         end
         results += client.public_pages(:q => params[:query]).collect do |page|
           Dradis::Plugins::Import::Result.new(
-            description: page.content,
+            description: page.content.dup,
                   title: "[pub] #{page.name}",
-                   tags: [:public]
+                   tags: ['!468847_public']
           )
         end
       rescue Exception => e
